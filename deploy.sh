@@ -4,8 +4,8 @@
 REMOTE_HOST=$1
 
 # Define variables
-HOST_CURRENT_DIR="/home/alexandru/Java/consumer"
-REMOTE_CURRENT_DIR="/home/alexandru/Java/consumer"
+HOST_CURRENT_DIR="/home/alexandru/Java/kafka-consumer"
+REMOTE_CURRENT_DIR="/home/alexandru/Java/kafka-consumer"
 REMOTE_USER="alexandru"
 DOCKER_IMAGE_NAME="kafka-consumer:1.0"
 DOCKER_CONTAINER_NAME="kafka-consumer"

@@ -1,4 +1,4 @@
-package com.alex.consumer;
+package com.alex.kafkaconsumer;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,11 +9,11 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.util.Properties;
 import java.util.Collections;
 
-public class Consumer {
+public class KafkaConsumerApplication {
 
     private static final String IP = "192.168.247.131";
     private static final int PORT = 9092;
-    private static final Logger logger = LogManager.getLogger(Consumer.class);
+    private static final Logger logger = LogManager.getLogger(KafkaConsumerApplication.class);
 
     public static void main(String[] args) {
         logger.info("Consumer is connecting to: " + generateKafkaEndpoint());

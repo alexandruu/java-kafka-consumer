@@ -8,15 +8,14 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>1.8</java.version> <!-- Use Java 8 or later -->
+        <java.version>1.8</java.version>
     </properties>
 
-    <dependencies>
-        <!-- Kafka Client Dependency -->
+    <dependencies>        
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>3.9.0</version> <!-- Use a version compatible with your Kafka broker -->
+            <version>3.9.0</version>
         </dependency>
 
         <dependency>
@@ -38,7 +37,6 @@
 
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -55,7 +53,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.alex.consumer.Consumer</mainClass>
+                            <mainClass>com.alex.kafkaconsumer.KafkaConsumerApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
