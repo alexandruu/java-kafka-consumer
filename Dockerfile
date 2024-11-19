@@ -24,6 +24,4 @@ COPY . /app/
 RUN mvn clean install
 RUN mvn dependency:copy-dependencies 
 
-EXPOSE 8080 9092
-
 CMD ["/bin/sh", "-c", "java -cp /app/target/$APP_NAME:$(mvn dependency:build-classpath -Dmdep.outputFile=/dev/stdout -q -B) com.alex.kafkaconsumer.KafkaConsumerApplication"]

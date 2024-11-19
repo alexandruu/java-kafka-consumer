@@ -33,8 +33,10 @@ public class KafkaConsumerApplication {
         // Consume messages
         while (true) {
             consumer.poll(1000).forEach(record -> {
+                String key = record.key();
+                String value = record.value();
                 // Process the record
-                System.out.println("Consumed message: " + record.value());
+                System.out.println("Consumed message: key = " + key + "; value =" + value);
             });
         }
     }

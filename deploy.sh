@@ -13,6 +13,7 @@ DOCKER_CONTAINER_NAME="kafka-consumer"
 REMOTE_COMMAND="ls -l /home/$REMOTE_USER"
 
 cd ${HOST_CURRENT_DIR}
+ssh ${REMOTE_USER}@${REMOTE_HOST} "rm -rf ${REMOTE_CURRENT_DIR}"
 scp -r . ${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_CURRENT_DIR} 2> deploy_errors
 
 echo "Building image ${DOCKER_IMAGE_NAME}"
@@ -20,4 +21,4 @@ ssh ${REMOTE_USER}@${REMOTE_HOST} "docker buildx build --load -t ${DOCKER_IMAGE_
 echo "Cleaning containers"
 ssh ${REMOTE_USER}@${REMOTE_HOST} "docker rm -f ${DOCKER_CONTAINER_NAME}"
 echo "Starting container"
-ssh ${REMOTE_USER}@${REMOTE_HOST} "docker run -d -p 8080:8080 -p 9092:9092 --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}"
+ssh ${REMOTE_USER}@${REMOTE_HOST} "docker run -d --name ${DOCKER_CONTAINER_NAME} ${DOCKER_IMAGE_NAME}"
